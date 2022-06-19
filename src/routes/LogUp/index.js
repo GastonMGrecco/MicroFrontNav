@@ -18,10 +18,11 @@ const SignUp = () => {
   };
 
   return (
-    <div className={style.login}>
+    <div className={style.container}>
+      <div className={style.img}></div>
       <form className={style.loginForm} onSubmit={handleSubmit(submit)}>
         <div className={style.input}>
-          <div className={style.ingreso}>
+          <div className={style.input}>
             <label htmlFor='email'>E-mail: </label>
             <input
               type='email'
@@ -30,7 +31,7 @@ const SignUp = () => {
               required
             ></input>
           </div>
-          <div className={style.ingreso}>
+          <div className={style.input}>
             <label htmlFor='nombre'>Nombres: </label>
             <input
               type='text'
@@ -39,7 +40,7 @@ const SignUp = () => {
               required
             ></input>
           </div>
-          <div className={style.ingreso}>
+          <div className={style.input}>
             <label htmlFor='apellido'>Apellido: </label>
             <input
               type='text'
@@ -49,7 +50,7 @@ const SignUp = () => {
             ></input>
           </div>
 
-          <div className={style.ingreso}>
+          <div className={style.input}>
             <label htmlFor='password'>Contraseña: </label>
             <input
               type={vista === false ? 'password' : 'text'}
@@ -59,7 +60,7 @@ const SignUp = () => {
             ></input>
             <button
               type='button'
-              className={style}
+              className={style.ojo}
               onClick={() => setVista(!vista)}
             >
               {vista === false

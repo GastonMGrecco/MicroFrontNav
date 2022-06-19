@@ -9,7 +9,7 @@
   height:35vh;
   background-image:url('https://img.freepik.com/vector-gratis/ilustracion-concepto-inicio-sesion_114360-739.jpg?w=2000');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 .loginForm{
@@ -60,7 +60,7 @@
   width:20px;
   position: absolute;
   right:12px;
-  bottom:2px;
+  bottom:0;
   background-color: transparent;
   border:none;
 }

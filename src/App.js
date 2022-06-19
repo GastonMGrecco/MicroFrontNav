@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import Home from './routes/Home';
 import Login from './routes/Login';
 import LogUp from './routes/LogUp';
 import './style.css';
@@ -9,7 +10,9 @@ const App = () => {
     <>
       <HashRouter>
         <Routes>
-          <Route path='/' element={<h1>This is a simple Home</h1>} />
+          <Route
+            path='/'
+            element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/logup' element={<LogUp />} />
         </Routes>
