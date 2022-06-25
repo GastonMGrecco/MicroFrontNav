@@ -56,14 +56,6 @@
   color:white;
 }
 
-.ojo{
-  width:20px;
-  position: absolute;
-  right:12px;
-  bottom:0;
-  background-color: transparent;
-  border:none;
-}
 @media only screen and (min-width: 700px){
 .container{
   flex-direction: row;
