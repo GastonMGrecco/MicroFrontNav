@@ -58,7 +58,9 @@ module.exports = (env, argv) => {
         remotes: {
         },
         exposes: {
-          './login': './src/App.js'
+          './login': './src/routes/Login',
+          './logup': './src/routes/LogUp',
+          './home': './src/routes/Home'
         },
         shared: {
           ...deps,
