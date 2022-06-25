@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import ver from './assets/ver.png';
-import nover from './assets/nover.png';
 import { Link } from 'react-router-dom';
 import style from './style.module.css';
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
-  const [vista, setVista] = useState(false);
   const submit = (data) => {
     axios
       .post('https://ecommerce-exercise-backend.herokuapp.com/login/', data)
@@ -46,34 +43,11 @@ const Login = () => {
           <div className={style.input}>
             <label htmlFor='password'>Contraseña: </label>
             <input
-              type={vista === false ? 'password' : 'text'}
+              type='password'
               {...register('password')}
               id={style.password}
               required
-            ></input>
-            <button
-              type='button'
-              className={style.ojo}
-              onClick={() => setVista(!vista)}
-            >
-              {vista === false
-                ? (
-                <img
-                  title='Mostrar contraseña'
-                  className={style.ojo}
-                  src={ver}
-                  alt=''
-                />
-                  )
-                : (
-                <img
-                  title='Ocultar contraseña'
-                  className={style.ojo}
-                  src={nover}
-                  alt=''
-                />
-                  )}
-            </button>
+            />
           </div>
 
           <button className={style.botonLogin}>Ingresar</button>
