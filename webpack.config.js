@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
       sourceMapFilename: '[name].js.map'
     },
     devServer: {
-      port: 8081,
+      port: 8082,
       open: true
     },
     devtool: 'source-map',
@@ -58,7 +58,7 @@ module.exports = (env, argv) => {
         remotes: {
         },
         exposes: {
-          './login': './src/bootstrap.js'
+          './login': './src/App.js'
         },
         shared: {
           ...deps,
