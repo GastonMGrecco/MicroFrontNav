@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-// const { SourceMapDevToolPlugin } = require('webpack');
 const path = require('path');
 const deps = require('./package.json').dependencies;
 
@@ -11,8 +10,7 @@ module.exports = (env, argv) => {
     entry: './src/index.js',
     output: {
       path: path.join(__dirname, 'build'),
-      filename: isProduction ? '[name].[contenthash].js' : '[name].js',
-      sourceMapFilename: '[name].js.map'
+      filename: isProduction ? '[name].[contenthash].js' : '[name].js'
     },
     devServer: {
       port: 8082,
@@ -49,18 +47,15 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template: './public/index.html'
       }),
-      // new SourceMapDevToolPlugin({
-      //   filename: '[file].map'
-      // }),
       new ModuleFederationPlugin({
         name: 'login',
         filename: 'remoteEntry.js',
         remotes: {
         },
         exposes: {
-          './login': './src/routes/Login',
-          './logup': './src/routes/LogUp',
-          './home': './src/routes/Home'
+          './login': './src/routes/Login/LoginApp.js',
+          './logup': './src/routes/LogUp/LogupApp.js',
+          './home': './src/routes/Home/HomeApp.js'
         },
         shared: {
           ...deps,

@@ -4,6 +4,7 @@ import style from './style.module.css';
 const Home = () => {
   return (
     <div className={style.container}>
+      <h1>MicrofrontendHomeComponent</h1>
       <div className={style.img}></div>
     </div>
   );

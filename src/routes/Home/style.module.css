@@ -12,6 +12,7 @@
   background-repeat: no-repeat;
   background-size:contain;
   background-position: center;
+  background-color: transparent;
 }
 
 @media only screen and (min-width: 700px){
