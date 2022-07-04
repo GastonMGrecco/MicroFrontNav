@@ -11,10 +11,14 @@ module.exports = (env, argv) => {
     output: {
       path: path.join(__dirname, 'build'),
       filename: isProduction ? '[name].[contenthash].js' : '[name].js'
+
     },
     devServer: {
-      port: 8082,
-      open: true
+      port: 8081,
+      liveReload: true,
+      open: true,
+      hot: false,
+      watchFiles: ['public/**/*']
     },
     devtool: 'source-map',
     module: {
@@ -48,14 +52,12 @@ module.exports = (env, argv) => {
         template: './public/index.html'
       }),
       new ModuleFederationPlugin({
-        name: 'login',
+        name: 'nav',
         filename: 'remoteEntry.js',
         remotes: {
         },
         exposes: {
-          './login': './src/routes/Login/LoginApp.js',
-          './logup': './src/routes/LogUp/LogupApp.js',
-          './home': './src/routes/Home/HomeApp.js'
+          './nav': './src/App.js'
         },
         shared: {
           ...deps,
